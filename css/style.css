@@ -228,3 +228,393 @@ footer a:hover {
     color: var(--orange-vif);
     transform: translateY(-3px);
 }
+
+/* --- Page Projets --- */
+
+.projets-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.projet-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(108, 99, 255, 0.15);
+}
+
+.projet-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--violet-doux);
+}
+
+.projet-info {
+    padding: 1.5rem;
+}
+
+.projet-info h3 {
+    color: var(--violet-fonce);
+    margin-bottom: 0.8rem;
+}
+
+.projet-info p {
+    color: var(--gris-fonce);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Petits badges pour les technos */
+.tags {
+    margin-bottom: 1.5rem;
+}
+
+.tags span {
+    background: var(--gris-tres-clair);
+    color: var(--violet-doux);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 5px;
+    border: 1px solid var(--gris-clair);
+}
+
+/* Liens spécifiques aux projets */
+.projet-links {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--gris-clair);
+    padding-top: 1rem;
+}
+
+.projet-links a {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.projet-links a:hover {
+    color: var(--violet-doux);
+}
+
+.projet-links i {
+    margin-right: 5px;
+}
+
+/* --- Correction Symétrie et Style Contact --- */
+
+.contact-container {
+    max-width: 1000px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-intro h1 {
+    font-size: 3.5rem;
+    color: var(--violet-fonce);
+}
+
+.location-badge {
+    display: inline-block;
+    background: var(--violet-doux);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: stretch; /* Force les cartes à avoir la même hauteur */
+}
+
+.contact-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    width: 100%;
+    max-width: 450px;
+    
+    /* Système pour aligner le contenu */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-top {
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--violet-doux);
+    margin-bottom: 1rem;
+}
+
+.contact-card h2 {
+    margin-bottom: 10px;
+    color: var(--gris-tres-fonce);
+}
+
+.phone-number {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--violet-fonce);
+    margin: 1.5rem 0;
+}
+
+/* LA MAGIE DE LA SYMÉTRIE : margin-top auto */
+.card-bottom {
+    margin-top: auto; 
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-social, .btn-glow {
+    height: 55px; /* Hauteur identique pour tous les boutons d'action */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.wa { background-color: #25D366; color: white; }
+.tg { background-color: #0088cc; color: white; }
+
+.btn-glow {
+    width: 100%;
+    background: var(--violet-doux);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+}
+
+.input-box {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.input-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--violet-doux);
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid var(--gris-clair);
+    background: var(--gris-tres-clair);
+    border-radius: 8px;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* --- Page Passions --- */
+
+.passions-container {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+.passions-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.passions-intro h1 {
+    font-size: 3rem;
+    color: var(--violet-fonce);
+    margin-bottom: 1rem;
+}
+
+.passions-intro p {
+    color: var(--gris-fonce);
+    font-size: 1.2rem;
+}
+
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.passion-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.passion-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--violet-doux);
+    box-shadow: 0 15px 35px rgba(108, 99, 255, 0.1);
+}
+
+.passion-icon {
+    font-size: 3rem;
+    color: var(--violet-doux);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: var(--gris-tres-clair);
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.passion-card:hover .passion-icon {
+    background: var(--violet-doux);
+    color: white;
+}
+
+.passion-card h3 {
+    color: var(--gris-tres-fonce);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.passion-card p {
+    color: var(--gris-fonce);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .passions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Page Divertissement --- */
+
+.ent-container {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.ent-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.ent-header h1 {
+    font-size: 3rem;
+    color: var(--violet-fonce);
+    margin-bottom: 1rem;
+}
+
+.ent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.ent-item {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ent-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.08);
+}
+
+.ent-icon {
+    font-size: 2.5rem;
+    color: var(--violet-doux);
+    background: var(--gris-tres-clair);
+    width: 80px;
+    height: 80px;
+    min-width: 80px; /* Empêche l'icône de rétrécir */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-right: 2rem;
+}
+
+.ent-text h3 {
+    font-size: 1.6rem;
+    color: var(--gris-tres-fonce);
+    margin-bottom: 0.5rem;
+}
+
+.ent-text p {
+    color: var(--gris-fonce);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 600px) {
+    .ent-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .ent-icon {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+}
