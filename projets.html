@@ -21,7 +21,12 @@
             <img src="images/mario.jpg" alt="Mario" class="logo-avatar">
             <a href="index.html">Mon Portfolio</a>
         </div>
-        <nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu de navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav-menu" class="nav-menu">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="projets.html" class="active">Projets</a></li>
@@ -32,7 +37,7 @@
         </nav>
     </header>
     <main>
-        <section class="projets-container">
+        <section id="projets" class="projets-container">
             <h1>Mes Réalisations</h1>
             <div class="projets-grid">
                 <article class="projet-card">
@@ -152,14 +157,18 @@
             </div>
         </section>
     </main>
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour au haut de la page" title="Retour au haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <footer>
         <p>&copy; 2026 Mario. Tous droits réservés.</p>
         <div>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/mario-majila" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Profil Twitter"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

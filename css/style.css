@@ -2,16 +2,42 @@
     --violet-doux: #6C63FF;
     --violet-fonce: #534EDD;
     --orange-vif: #FFA726;
-    --gris-tres-fonce: #333;
-    --gris-fonce: #666;
+    --gris-tres-fonce: #1a1a1a;
+    --gris-fonce: #444;
     --gris-tres-clair: #F8F8F8;
     --gris-clair: #EEE;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 15px 40px rgba(108, 99, 255, 0.1);
+
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.3s ease;
+    --transition-medium: 0.5s ease;
+
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 20px;
+    --radius-full: 50%;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +51,22 @@ body {
 
 main {
     flex: 1;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--violet-doux);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--violet-doux);
+    outline-offset: 2px;
+}
+
+input:focus-visible {
+    outline: 3px solid var(--violet-doux);
+    outline-offset: 2px;
 }
 
 header {
@@ -74,6 +116,98 @@ ul li {
 
 ul {
     display: flex;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--violet-doux);
+    border-radius: 2px;
+    transition: all var(--transition-smooth);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-menu {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 99;
+        padding-top: 120px;
+        animation: slideInMenu var(--transition-smooth);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid var(--gris-clair);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1.5rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    @keyframes slideInMenu {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
 }
 
 ul li a {
@@ -965,4 +1099,162 @@ footer a:hover {
         font-size: 1.3rem;
         margin: 0 5px;
     }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--violet-doux);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+    transition: all var(--transition-smooth);
+    z-index: 98;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+}
+
+.scroll-to-top:active {
+    transform: scale(0.95);
+}
+
+.scroll-to-top.visible {
+    display: flex;
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}
+
+/* ========================================
+   ANIMATIONS AU SCROLL
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-animation {
+    opacity: 0;
+}
+
+.fade-animation.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Staggered animation for multiple elements */
+.projets-grid .projet-card:nth-child(1),
+.passions-grid .passion-card:nth-child(1),
+.ent-list .ent-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.projets-grid .projet-card:nth-child(2),
+.passions-grid .passion-card:nth-child(2),
+.ent-list .ent-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.projets-grid .projet-card:nth-child(3),
+.passions-grid .passion-card:nth-child(3),
+.ent-list .ent-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.projets-grid .projet-card:nth-child(4),
+.passions-grid .passion-card:nth-child(4),
+.ent-list .ent-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* ========================================
+   ENHANCED BUTTON STYLES
+   ======================================== */
+.hero a,
+.btn-glow,
+.btn-social {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero a::before,
+.btn-glow::before,
+.btn-social::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.hero a:active::before,
+.btn-glow:active::before,
+.btn-social:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ========================================
+   IMPROVED FORM INPUTS
+   ======================================== */
+.input-box input::placeholder {
+    color: var(--gris-fonce);
+}
+
+.input-box input {
+    transition: all var(--transition-smooth);
+}
+
+.input-box input:focus {
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+
+/* ========================================
+   ENHANCED CARD SHADOWS
+   ======================================== */
+.projet-card,
+.passion-card,
+.ent-item,
+.contact-card {
+    transition: all var(--transition-smooth);
+}
+
+/* ========================================
+   KEYBOARD NAVIGATION SUPPORT
+   ======================================== */
+body.keyboard-nav a:focus-visible,
+body.keyboard-nav button:focus-visible,
+body.keyboard-nav input:focus-visible {
+    outline: 3px solid var(--violet-doux);
+    outline-offset: 3px;
 }
