@@ -203,7 +203,6 @@ section h2::after {
 }
 
 .competences table tbody td {
-    /* ajoute une bordure de 1px en bas de chaque cellule */
     border-bottom: 1px solid var(--gris-clair);
 }
 
@@ -316,7 +315,6 @@ footer a:hover {
     margin-bottom: 1.2rem;
 }
 
-/* Petits badges pour les technos */
 .tags {
     margin-bottom: 1.5rem;
 }
@@ -332,7 +330,6 @@ footer a:hover {
     border: 1px solid var(--gris-clair);
 }
 
-/* Liens spécifiques aux projets */
 .projet-links {
     display: flex;
     justify-content: space-between;
@@ -355,8 +352,6 @@ footer a:hover {
 .projet-links i {
     margin-right: 5px;
 }
-
-/* --- Correction Symétrie et Style Contact --- */
 
 .contact-container {
     max-width: 1100px;
@@ -390,7 +385,6 @@ footer a:hover {
     gap: 2rem;
     flex-wrap: wrap;
     align-items: stretch;
-    /* Force les cartes à avoir la même hauteur */
 }
 
 .contact-card {
@@ -400,8 +394,6 @@ footer a:hover {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
     width: 100%;
     max-width: 450px;
-
-    /* Système pour aligner le contenu */
     display: flex;
     flex-direction: column;
 }
@@ -428,7 +420,6 @@ footer a:hover {
     margin: 1.5rem 0;
 }
 
-/* LA MAGIE DE LA SYMÉTRIE : margin-top auto */
 .card-bottom {
     margin-top: auto;
     padding-top: 2rem;
@@ -444,7 +435,6 @@ footer a:hover {
 .btn-social,
 .btn-glow {
     height: 55px;
-    /* Hauteur identique pour tous les boutons d'action */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -585,7 +575,7 @@ footer a:hover {
     line-height: 1.5;
 }
 
-/* Responsive */
+/* Responsive pour mobile */
 @media (max-width: 600px) {
     .passions-grid {
         grid-template-columns: 1fr;
@@ -639,7 +629,6 @@ footer a:hover {
     width: 80px;
     height: 80px;
     min-width: 80px;
-    /* Empêche l'icône de rétrécir */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -659,7 +648,6 @@ footer a:hover {
     line-height: 1.6;
 }
 
-/* Responsive pour mobile */
 @media (max-width: 600px) {
     .ent-item {
         flex-direction: column;
