@@ -38,6 +38,7 @@ document.addEventListener('click', (e) => {
 // SCROLL TO TOP
 // ========================================
 const scrollToTopBtn = document.getElementById('scroll-to-top');
+const progressBar = document.getElementById('progress-bar');
 
 if (scrollToTopBtn) {
     window.addEventListener('scroll', () => {
@@ -45,6 +46,13 @@ if (scrollToTopBtn) {
             scrollToTopBtn.classList.add('visible');
         } else {
             scrollToTopBtn.classList.remove('visible');
+        }
+
+        // Update progress bar
+        if (progressBar) {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / totalHeight) * 100;
+            progressBar.style.width = scrolled + '%';
         }
     });
 
@@ -170,4 +178,41 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+// ========================================
+// DARK MODE TOGGLE
+// ========================================
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Check localStorage for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
+    enableDarkMode();
+}
+
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+    darkModeToggle?.classList.add('active');
+    localStorage.setItem('theme', 'dark');
+    darkModeToggle?.setAttribute('title', 'Light mode');
+}
+
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
+    darkModeToggle?.classList.remove('active');
+    localStorage.setItem('theme', 'light');
+    darkModeToggle?.setAttribute('title', 'Dark mode');
+}
+
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+}
+
 console.log('Portfolio initialized successfully!');
+

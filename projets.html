@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,11 +17,15 @@
 </head>
 
 <body>
+    <div class="progress-bar" id="progress-bar"></div>
     <header>
         <div class="logo-section">
             <img src="images/mario.jpg" alt="Mario" class="logo-avatar">
             <a href="index.html">Mon Portfolio</a>
         </div>
+        <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Basculer le thème sombre" title="Dark mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
         <button class="hamburger" id="hamburger" aria-label="Menu de navigation" aria-expanded="false">
             <span></span>
             <span></span>
