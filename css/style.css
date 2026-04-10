@@ -120,7 +120,7 @@ a.active::after {
 
 .hero h1 {
     color: var(--violet-fonce);
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
 }
