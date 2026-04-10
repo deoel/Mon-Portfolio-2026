@@ -73,9 +73,11 @@ const observerOptions = {
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            setTimeout(() => {
+                entry.target.classList.add('fade-in');
+            }, index * 100);
             observer.unobserve(entry.target);
         }
     });
@@ -213,6 +215,94 @@ if (darkModeToggle) {
         }
     });
 }
+
+// ========================================
+// ANIMATED COUNTERS
+// ========================================
+function animateCounter(element, target, duration = 1500) {
+    let current = 0;
+    const increment = target / (duration / 16);
+
+    const counter = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(counter);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+const counters = document.querySelectorAll('.counter');
+let countersStarted = false;
+
+if (counters.length > 0) {
+    const countersObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !countersStarted) {
+            countersStarted = true;
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                animateCounter(counter, target);
+            });
+            countersObserver.unobserve(entries[0].target);
+        }
+    });
+
+    counters[0]?.parentElement?.forEach(element => {
+        countersObserver.observe(element);
+    });
+}
+
+// ========================================
+// ADD LOADING STATE TO BUTTONS
+// ========================================
+document.querySelectorAll('button[type="submit"]').forEach(button => {
+    button.addEventListener('click', () => {
+        if (button.id !== 'scroll-to-top' && button.id !== 'hamburger' && button.id !== 'dark-mode-toggle') {
+            const originalText = button.textContent;
+            button.disabled = true;
+            button.style.opacity = '0.7';
+
+            setTimeout(() => {
+                button.disabled = false;
+                button.style.opacity = '1';
+                button.textContent = originalText;
+            }, 2000);
+        }
+    });
+});
+
+// ========================================
+// LAZY OBSERVATION FOR ANIMATIONS
+// ========================================
+const fadeInElements = document.querySelectorAll('[data-fade-in]');
+if (fadeInElements.length > 0) {
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeInElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+}
+
+// ========================================
+// PARALLAX EFFECT (LIGHT)
+// ========================================
+window.addEventListener('scroll', () => {
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    parallaxElements.forEach(element => {
+        const scrollY = window.scrollY;
+        const offset = scrollY * 0.5;
+        element.style.transform = `translateY(${offset}px)`;
+    });
+});
 
 console.log('Portfolio initialized successfully!');
 

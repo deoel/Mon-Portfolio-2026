@@ -45,17 +45,17 @@ body.dark-mode .hero h1 {
 }
 
 body.dark-mode .hero p {
-    color: var(--gris-tres-clair);
+    color: #b0b0b0;
 }
 
 body.dark-mode section h2 {
-    color: #88ff00;
+    color: var(--violet-doux);
 }
 
 body.dark-mode .apropos p,
 body.dark-mode .ent-text p,
 body.dark-mode .passions-intro p {
-    color: var(--gris-tres-clair);
+    color: var(--gris-fonce);
 }
 
 body.dark-mode .competences table {
@@ -91,7 +91,7 @@ body.dark-mode .projet-info h3,
 body.dark-mode .passion-card h3,
 body.dark-mode .ent-text h3,
 body.dark-mode .contact-card h2 {
-    color: #88ff00;
+    color: var(--violet-doux);
 }
 
 body.dark-mode .projet-info p,

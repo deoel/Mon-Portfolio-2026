@@ -42,7 +42,7 @@
         </nav>
     </header>
     <main>
-        <section id="contact" class="contact-container">
+        <section id="contact" class="contact-container contact-intro">
             <h1>Contactez-moi</h1>
             <p class="location-badge"><i class="fa-solid fa-location-dot"></i> Basé à Lubumbashi, RDC</p>
         </section>
@@ -78,12 +78,14 @@
                     <p>Laissez vos coordonnées pour un rappel téléphonique.</p>
                     <form action="#" class="minimal-form" id="contactForm">
                         <div class="input-box">
+                            <label for="fullname" class="sr-only">Nom complet</label>
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" placeholder="Nom complet" required>
+                            <input type="text" id="fullname" placeholder="Nom complet" required>
                         </div>
                         <div class="input-box">
+                            <label for="phone" class="sr-only">Téléphone</label>
                             <i class="fa-solid fa-mobile-screen-button"></i>
-                            <input type="tel" placeholder="Téléphone" required>
+                            <input type="tel" id="phone" placeholder="Téléphone" required>
                         </div>
                     </form>
                 </div>
@@ -100,9 +102,12 @@
     <footer>
         <p>&copy; 2026 Mario. Tous droits réservés.</p>
         <div>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/mario-majila" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Profil Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i
+                    class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/mario-majila" target="_blank" rel="noopener noreferrer"
+                aria-label="Profil LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Profil Twitter"><i
+                    class="fa-brands fa-x-twitter"></i></a>
         </div>
     </footer>
     <script src="js/main.js"></script>
