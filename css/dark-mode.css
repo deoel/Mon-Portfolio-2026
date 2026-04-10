@@ -148,9 +148,6 @@ body.dark-mode .dark-mode-toggle:hover {
 
 /* Theme toggle button */
 .dark-mode-toggle {
-    position: fixed;
-    top: 1.5rem;
-    right: 60px;
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -163,6 +160,7 @@ body.dark-mode .dark-mode-toggle:hover {
     font-size: 1.5rem;
     transition: all var(--transition-smooth);
     z-index: 97;
+    flex-shrink: 0;
 }
 
 .dark-mode-toggle:hover {
@@ -180,8 +178,6 @@ body.dark-mode .dark-mode-toggle:hover {
 
 @media (max-width: 768px) {
     .dark-mode-toggle {
-        top: 1rem;
-        right: 60px;
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
@@ -190,8 +186,6 @@ body.dark-mode .dark-mode-toggle:hover {
 
 @media (max-width: 480px) {
     .dark-mode-toggle {
-        top: 0.8rem;
-        right: 55px;
         width: 38px;
         height: 38px;
         font-size: 1rem;

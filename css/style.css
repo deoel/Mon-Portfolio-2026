@@ -884,13 +884,17 @@ footer a:hover {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
         padding: 1.5rem 2rem;
         gap: 1.5rem;
     }
 
     .logo-section {
         gap: 0.7rem;
+        flex: 1;
+    }
+
+    .nav-menu {
+        display: none;
     }
 
     .logo-avatar {
