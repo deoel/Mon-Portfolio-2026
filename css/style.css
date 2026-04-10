@@ -39,6 +39,27 @@ header {
     padding: 2rem 3rem;
 }
 
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.logo-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--violet-doux);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
+}
+
 header div a {
     text-decoration: none;
     font-size: 2.2rem;
@@ -670,6 +691,16 @@ footer a:hover {
         gap: 1.5rem;
     }
 
+    .logo-section {
+        gap: 0.7rem;
+    }
+
+    .logo-avatar {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+    }
+
     header div a {
         font-size: 1.8rem;
     }
@@ -752,6 +783,16 @@ footer a:hover {
 @media (max-width: 480px) {
     header {
         padding: 1rem 1.5rem;
+    }
+
+    .logo-section {
+        gap: 0.5rem;
+    }
+
+    .logo-avatar {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
     }
 
     header div a {
