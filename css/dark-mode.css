@@ -97,12 +97,13 @@ body.dark-mode .contact-card h2 {
 body.dark-mode .projet-info p,
 body.dark-mode .passion-card p,
 body.dark-mode .ent-text p {
-    color: var(--gris-tres-clair);
+    color: var(--gris-fonce);
 }
 
 body.dark-mode .tags span {
     background-color: #1a1a1a;
     border-color: #444;
+    color: var(--violet-doux);
 }
 
 body.dark-mode .projet-links {
